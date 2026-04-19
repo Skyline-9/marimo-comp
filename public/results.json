@@ -1,0 +1,190 @@
+{
+  "experiment_1": {
+    "Llama 3.2 1B": {
+      "ARC": {
+        "n": 100,
+        "baseline": 19.0,
+        "repeated": 19.0,
+        "padded": 19.0,
+        "delta": 0.0
+      },
+      "MMLU": {
+        "n": 100,
+        "baseline": 11.0,
+        "repeated": 11.0,
+        "padded": 11.0,
+        "delta": 0.0
+      }
+    },
+    "Llama 3.1 8B": {
+      "ARC": {
+        "n": 100,
+        "baseline": 64.0,
+        "repeated": 62.0,
+        "padded": 63.0,
+        "delta": -2.0
+      },
+      "MMLU": {
+        "n": 100,
+        "baseline": 26.0,
+        "repeated": 29.0,
+        "padded": 27.0,
+        "delta": 3.0
+      }
+    },
+    "Llama 4 Scout 17B": {
+      "ARC": {
+        "n": 100,
+        "baseline": 36.0,
+        "repeated": 80.0,
+        "padded": 61.0,
+        "delta": 44.0
+      },
+      "MMLU": {
+        "n": 100,
+        "baseline": 31.0,
+        "repeated": 41.0,
+        "padded": 38.0,
+        "delta": 10.0
+      }
+    },
+    "GPT-4o Mini": {
+      "ARC": {
+        "n": 100,
+        "baseline": 85.0,
+        "repeated": 87.0,
+        "padded": 85.0,
+        "delta": 2.0
+      },
+      "MMLU": {
+        "n": 100,
+        "baseline": 48.0,
+        "repeated": 49.0,
+        "padded": 46.0,
+        "delta": 1.0
+      }
+    }
+  },
+  "experiment_2": {
+    "model": "Llama 3.1 8B",
+    "results": {
+      "Baseline (no repeat)": {
+        "accuracy": 66.0,
+        "n": 50
+      },
+      "Repeat everything": {
+        "accuracy": 66.0,
+        "n": 50
+      },
+      "Repeat question only": {
+        "accuracy": 70.0,
+        "n": 50
+      },
+      "Question-Context-Question": {
+        "accuracy": 66.0,
+        "n": 50
+      }
+    }
+  },
+  "experiment_3": {
+    "Llama 3.1 8B": {
+      "beginning": {
+        "baseline": {
+          "correct": true,
+          "answer": "847,293."
+        },
+        "repeated": {
+          "correct": true,
+          "answer": "847,293."
+        }
+      },
+      "middle": {
+        "baseline": {
+          "correct": true,
+          "answer": "847,293."
+        },
+        "repeated": {
+          "correct": true,
+          "answer": "847,293."
+        }
+      },
+      "end": {
+        "baseline": {
+          "correct": true,
+          "answer": "847,293."
+        },
+        "repeated": {
+          "correct": true,
+          "answer": "847,293."
+        }
+      }
+    },
+    "GPT-4o Mini": {
+      "beginning": {
+        "baseline": {
+          "correct": true,
+          "answer": "The exact population of Zypherion City according to the latest census is 847,293"
+        },
+        "repeated": {
+          "correct": true,
+          "answer": "The exact population of Zypherion City according to the latest census is 847,293"
+        }
+      },
+      "middle": {
+        "baseline": {
+          "correct": true,
+          "answer": "The exact population of Zypherion City according to the latest census is 847,293"
+        },
+        "repeated": {
+          "correct": true,
+          "answer": "The exact population of Zypherion City according to the latest census is 847,293"
+        }
+      },
+      "end": {
+        "baseline": {
+          "correct": true,
+          "answer": "The exact population of Zypherion City according to the latest census is 847,293"
+        },
+        "repeated": {
+          "correct": true,
+          "answer": "The exact population of Zypherion City according to the latest census is 847,293"
+        }
+      }
+    }
+  },
+  "experiment_4": {
+    "model": "Llama 3.1 8B",
+    "results": {
+      "0%": {
+        "n": 50,
+        "clean": 74.0,
+        "noisy": 74.0,
+        "noisy_rep": 72.0
+      },
+      "5%": {
+        "n": 50,
+        "clean": 74.0,
+        "noisy": 74.0,
+        "noisy_rep": 70.0
+      },
+      "10%": {
+        "n": 50,
+        "clean": 72.0,
+        "noisy": 74.0,
+        "noisy_rep": 72.0
+      },
+      "15%": {
+        "n": 50,
+        "clean": 74.0,
+        "noisy": 70.0,
+        "noisy_rep": 68.0
+      },
+      "20%": {
+        "n": 50,
+        "clean": 74.0,
+        "noisy": 70.0,
+        "noisy_rep": 66.0
+      }
+    }
+  }
+}

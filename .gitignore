@@ -1,0 +1,25 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# IDE
+.idea/
+
+# Raw benchmark data (too large for git, not needed for WASM notebook)
+data/arc_challenge_test.json
+data/mmlu_pro_test.json
+
+# Old standalone scripts
+run_experiments.py
+run_all.py
+main.py
+
+# Marimo snapshots
+__marimo__/
