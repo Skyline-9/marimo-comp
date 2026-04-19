@@ -35,3 +35,20 @@ We measured how attention heads specialize as NCA complexity (Gzip ratio) increa
 - **Insight:** Specialized computational primitives are evolved specifically to handle structured complexity.
 
 ---
+
+## The Interactive Reproduction Lab
+
+All experiments run **live in the browser** using a pure `numpy` transformer with full manual backpropagation.
+
+### Key Explorations:
+1. **Elementary CA:** Explore all 256 Wolfram rules and complexity classes.
+2. **NCA Simulation:** Build and evolve Neural Cellular Automata with custom seeds.
+3. **Complexity Mapping:** Measure the "Edge of Chaos" using Gzip compression ratios.
+4. **Live Training:** Reproduce the paper's core claim by training a transformer on NCA data.
+
+### Technical Methodology
+- **NCA Data Source:** 2D grid (12×12) with 10 hidden states.
+- **Tokenization:** Grids are patched into 2×2 tokens for the transformer.
+- **Complexity Metric:** We use **Gzip compression ratio** as a proxy for rule complexity. Rules with a ratio > 0.5 (Class IV) provide the strongest pre-training signal.
+
+---
