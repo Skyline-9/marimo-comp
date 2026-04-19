@@ -11,3 +11,27 @@ Pre-training LLMs on natural language is costly and finite. This project explore
 - **10x Data Efficiency:** 164M NCA tokens outperform 1.6B natural language tokens.
 - **1.6x Faster Convergence:** Accelerated downstream language modeling.
 - **6% Lower Perplexity:** Consistent gains across text, math, and code.
+
+---
+
+## Beyond the Paper: Novel Findings
+
+This repository extends the original NCA hypothesis with three novel experiments:
+
+### 1. The Shuffled Control (Temporal Structure)
+Does the transformer learn from NCA *statistics* or NCA *dynamics*?
+- **Experiment:** We compared training on raw NCA trajectories vs. spatially/temporally shuffled tokens.
+- **Finding:** Shuffling halves learnability ($L_{shuffled} \approx 2 \times L_{nca}$).
+- **Insight:** The pre-training signal is rooted in the **causal update rules**, not the token distribution.
+
+### 2. Attention Head Specialization ($r = -0.79$)
+We measured how attention heads specialize as NCA complexity (Gzip ratio) increases.
+- **Finding:** Learnable NCA rules produce highly specialized heads. Chaotic rules (Class III) result in diffuse attention.
+- **Correlation:** Strong inverse correlation ($r = -0.79$) between rule entropy and head specialization.
+
+### 3. Causal Ablation of Complexity
+- **Experiment:** We ablated the most specialized head and measured loss across Wolfram classes.
+- **Finding:** Removing the "complex head" causes a **+38% loss spike** on Class IV rules (Edge of Chaos), but **<1% impact** on Class III (Chaotic).
+- **Insight:** Specialized computational primitives are evolved specifically to handle structured complexity.
+
+---
