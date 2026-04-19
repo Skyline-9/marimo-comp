@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>README Layout Approaches</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #0d1117;
+            --card-bg: #161b22;
+            --border: #30363d;
+            --text: #c9d1d9;
+            --text-dim: #8b949e;
+            --accent: #58a6ff;
+            --success: #238636;
+            --warning: #d29922;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        h1 { border-bottom: 1px solid var(--border); padding-bottom: 10px; margin-bottom: 30px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .approach-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .approach-card.recommended {
+            border-color: var(--accent);
+            position: relative;
+        }
+        .recommended-badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            background: var(--accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        .approach-card h2 {
+            margin-top: 0;
+            font-size: 1.25rem;
+            color: var(--accent);
+        }
+        .mockup {
+            background: #010409;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            height: 300px;
+            margin: 15px 0;
+            padding: 10px;
+            font-size: 8px;
+            font-family: monospace;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .mockup-header { height: 20px; border-bottom: 1px solid #30363d; display: flex; align-items: center; gap: 4px; }
+        .dot { width: 4px; height: 4px; border-radius: 50%; background: #30363d; }
+        .mockup-line { height: 4px; background: #30363d; border-radius: 2px; }
+        .mockup-title { height: 12px; background: #58a6ff; width: 60%; border-radius: 2px; }
+        .mockup-image { height: 80px; background: #161b22; border: 1px dashed #30363d; display: flex; align-items: center; justify-content: center; color: #30363d; font-size: 10px; }
+        .mockup-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .mockup-box { height: 40px; background: #21262d; border-radius: 4px; }
+        
+        .pros-cons { margin-top: auto; font-size: 14px; }
+        .pros { color: #3fb950; margin-bottom: 8px; }
+        .cons { color: #f85149; }
+        .pros i, .cons i { margin-right: 5px; }
+
+        .tagline { font-style: italic; color: var(--text-dim); margin-bottom: 15px; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>README Layout Approaches</h1>
+        <div class="grid">
+            <!-- Option 1: Interactive Lab -->
+            <div class="approach-card">
+                <h2>1. The Interactive Lab</h2>
+                <div class="tagline">"Run the research in your browser."</div>
+                <div class="mockup">
+                    <div class="mockup-header">
+                        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                    </div>
+                    <div class="mockup-title"></div>
+                    <div class="mockup-line" style="width: 90%"></div>
+                    <div class="mockup-line" style="width: 85%"></div>
+                    <div class="mockup-image">Interactive Marimo Dashboard</div>
+                    <div class="mockup-grid">
+                        <div class="mockup-box"></div>
+                        <div class="mockup-box"></div>
+                    </div>
+                    <div class="mockup-line" style="width: 70%"></div>
+                </div>
+                <div class="pros-cons">
+                    <div class="pros"><i class="fas fa-plus"></i> Immediate engagement with 'marimo edit'</div>
+                    <div class="pros"><i class="fas fa-plus"></i> Visualizes NCA dynamics early</div>
+                    <div class="cons"><i class="fas fa-minus"></i> Theoretical findings buried lower</div>
+                </div>
+            </div>
+
+            <!-- Option 2: Insight-First (Recommended) -->
+            <div class="approach-card recommended">
+                <div class="recommended-badge">RECOMMENDED</div>
+                <h2>2. Insight-First</h2>
+                <div class="tagline">"New causal evidence for the NCA hypothesis."</div>
+                <div class="mockup">
+                    <div class="mockup-header">
+                        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                    </div>
+                    <div class="mockup-title" style="width: 80%"></div>
+                    <div class="mockup-line" style="width: 40%; background: #238636;"></div>
+                    <div class="mockup-grid" style="grid-template-columns: 1fr;">
+                         <div class="mockup-box" style="height: 60px; border: 1px solid #238636;">Comparison: Shuffled vs Structured</div>
+                    </div>
+                    <div class="mockup-line" style="width: 90%"></div>
+                    <div class="mockup-title" style="width: 50%; background: #d29922;"></div>
+                    <div class="mockup-line" style="width: 85%"></div>
+                    <div class="mockup-image" style="height: 50px;">Causal Ablation Heatmap</div>
+                </div>
+                <div class="pros-cons">
+                    <div class="pros"><i class="fas fa-plus"></i> Highlights unique contributions</div>
+                    <div class="pros"><i class="fas fa-plus"></i> Perfect for researchers seeking 'what's new'</div>
+                    <div class="cons"><i class="fas fa-minus"></i> Slightly higher cognitive load initially</div>
+                </div>
+            </div>
+
+            <!-- Option 3: Technical Utility -->
+            <div class="approach-card">
+                <h2>3. Technical Utility</h2>
+                <div class="tagline">"Code, data, and reproduction steps."</div>
+                <div class="mockup">
+                    <div class="mockup-header">
+                        <div class="dot"></div><div class="dot"></div><div class="dot"></div>
+                    </div>
+                    <div class="mockup-title" style="width: 40%"></div>
+                    <div class="mockup-line" style="width: 30%; background: #8b949e;"></div>
+                    <div class="mockup-line" style="width: 90%"></div>
+                    <div class="mockup-line" style="width: 85%"></div>
+                    <div class="mockup-box" style="height: 20px; background: #010409; border: 1px solid #30363d; font-size: 6px; padding: 4px;">pip install marimo matplotlib numpy...</div>
+                    <div class="mockup-title" style="width: 50%; margin-top: 10px;"></div>
+                    <div class="mockup-line" style="width: 90%"></div>
+                    <div class="mockup-line" style="width: 85%"></div>
+                </div>
+                <div class="pros-cons">
+                    <div class="pros"><i class="fas fa-plus"></i> Extremely clean and professional</div>
+                    <div class="pros"><i class="fas fa-plus"></i> Easiest to navigate as a reference</div>
+                    <div class="cons"><i class="fas fa-minus"></i> Less "excitement" for the interactive bits</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
