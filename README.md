@@ -47,7 +47,7 @@ All experiments run **live in the browser** using a pure `numpy` transformer wit
 4. **Live Training:** Reproduce the paper's core claim by training a transformer on NCA data.
 
 ### Technical Methodology
-- **NCA Data Source:** 2D grid (12×12) with 10 hidden states.
+- **NCA Data Source:** 4×4 grid with 4 hidden states (optimized for real-time browser performance).
 - **Tokenization:** Grids are patched into 2×2 tokens for the transformer.
 - **Complexity Metric:** We use **Gzip compression ratio** as a proxy for rule complexity. Rules with a ratio > 0.5 (Class IV) provide the strongest pre-training signal.
 

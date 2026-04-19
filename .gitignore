@@ -23,3 +23,4 @@ main.py
 
 # Marimo snapshots
 __marimo__/
+.gitnexus
