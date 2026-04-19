@@ -52,3 +52,35 @@ All experiments run **live in the browser** using a pure `numpy` transformer wit
 - **Complexity Metric:** We use **Gzip compression ratio** as a proxy for rule complexity. Rules with a ratio > 0.5 (Class IV) provide the strongest pre-training signal.
 
 ---
+
+## Getting Started
+
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/your-username/marimo-comp.git
+cd marimo-comp
+
+# Install dependencies using uv (recommended)
+uv sync
+
+# Run the interactive notebook
+marimo edit notebook.py
+```
+
+### Project Structure
+- `notebook.py`: The main interactive exploration (Marimo app).
+- `docs/research/`: Detailed deep-dives into epiplexity and NCA dynamics.
+- `data/`: Results and cached CA trajectories.
+
+### References
+```bibtex
+@article{lee2026nca,
+  title={Training Language Models via Neural Cellular Automata},
+  author={Lee, Han and Han, Jung and Kumar, S. and Agrawal, P.},
+  journal={arXiv preprint arXiv:2603.10055},
+  year={2026}
+}
+```
+
+---
