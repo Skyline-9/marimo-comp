@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "name": "gitnexus-init",
+            "type": "command",
+            "command": "node .gemini/hooks/gitnexus-init.js"
+          }
+        ]
+      }
+    ]
+  }
+}
