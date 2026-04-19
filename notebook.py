@@ -1634,6 +1634,7 @@ def _(np, NumpyTransformer, gzip, io, plt, mo):
     ax_ent.set_title("Head Entropy Divergence", fontweight="bold")
     ax_ent.legend(fontsize=8, ncol=2)
     plt.tight_layout()
+    spec_fig
 
     return attn_results, chance, finding_corr, saved_models, spec_fig
 
@@ -1698,6 +1699,7 @@ def _(np, NumpyTransformer, saved_models, attn_results, plt, mo):
         for bi, b in enumerate(bars): pct_val = imp[bi]*100/abl_results[ai]['base']; ax_ab.text(bi, pct_val + 0.5, f"+{pct_val:.1f}%", ha='center', fontsize=9, fontweight='bold')
     ax_a1.set_ylim(0, max(max(i*100/abl_results[0]['base'] for i in abl_results[0]['impacts']), max(i*100/abl_results[4]['base'] for i in abl_results[4]['impacts']), 5) * 1.3)
     ax_a2.set_ylim(ax_a1.get_ylim()); ablation_fig.suptitle("Causal Head Ablation: Specialized Heads Matter", fontsize=13, fontweight='bold'); plt.tight_layout()
+    ablation_fig
     
     return abl_results, ablation_fig
 
